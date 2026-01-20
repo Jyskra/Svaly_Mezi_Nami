@@ -1,4 +1,4 @@
-public class Chracter {
+public class Character {
     private String name;
     private String description;
     private Task task;
