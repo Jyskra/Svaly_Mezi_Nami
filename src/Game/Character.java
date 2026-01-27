@@ -1,7 +1,10 @@
+package Game;
+
 public class Character {
     private String name;
     private String description;
     private Task task;
+    private int state;
 
     public Character() {}
 
@@ -24,11 +27,14 @@ public class Character {
         this.task = task;
     }
 
-    public void talk(int state){};
+    public String talk(){
+        //TODO add dialogue logic, meaning different outputs based on how advanced the state is.
+        return null;
+    };
 
     @Override
     public String toString() {
-        return "Character{" +
+        return "Game.Character{" +
                 "name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", task=" + task +

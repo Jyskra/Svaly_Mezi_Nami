@@ -1,3 +1,5 @@
+package Game;
+
 public class Player {
     private Task currentTask;
     private Inventory inventory;

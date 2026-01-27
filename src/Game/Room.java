@@ -1,3 +1,5 @@
+package Game;
+
 public class Room {
     private Character character;
     private String name;
@@ -23,7 +25,7 @@ public class Room {
 
     @Override
     public String toString() {
-        return "Room{" +
+        return "Game.Room{" +
                 "character=" + character +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
