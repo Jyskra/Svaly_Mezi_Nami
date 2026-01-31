@@ -1,10 +1,72 @@
-{
-  "1" : {
-    "name" : "aa",
-    "description" : "large"
+[
+  {
+    "id" : "main_hall",
+    "name" : "Hlavní hala",
+    "description" : "Vstupuješ do hlavní haly kulturistického kongresu. Kolem tebe se pohybují legendy železa, vzduch je cítit potem a magnéziem. Odtud se můžeš vydat do kterékoliv z místností známých kulturistů.",
+    "exits" : [
+      "main_bodybuilder",
+      "platz",
+      "arnold",
+      "levrone",
+      "yates",
+      "cutler",
+      "zane"
+    ]
   },
-  "2" : {
-    "name" : "ab",
-    "description" : "small"
+  {
+    "id" : "main_bodybuilder",
+    "name" : "Místnost hlavního kulturisty",
+    "description" : "Za masivním stolem sedí hlavní kulturista kongresu. Jeho pohled tě měří od hlavy k patě. Tady se rozhodne, zda jsi hoden tréninkového plánu… nebo jen další osy na tlaky.",
+    "exits" : [
+      "main_hall"
+    ]
+  },
+  {
+    "id" : "platz",
+    "name" : "Síň nekonečných dřepů",
+    "description" : "Vstoupil jsi do síně, kde se čas zastavil v nekonečných dřepech. Tom Platz stojí u naložené osy a s úsměvem bolesti v očích tě vyzývá, abys prokázal, že víš, jak se správně budují nohy.",
+    "exits" : [
+      "main_hall"
+    ]
+  },
+  {
+    "id" : "arnold",
+    "name" : "Chrám železného hrudníku",
+    "description" : "Arnold leží pod osou na lavičce a právě dokončil těžkou sérii. S úsměvem odloží osu a zadívá se na tebe. Pokud víš, kdy svaly opravdu rostou, možná se s tebou podělí o své znalosti.",
+    "exits" : [
+      "main_hall"
+    ]
+  },
+  {
+    "id" : "levrone",
+    "name" : "Aréna deltové erupce",
+    "description" : "Zrcadla po stěnách odrážejí dokonalá ramena Kevina Levrona. Jakmile vstoupíš, otočí se k tobě a čeká. Víš, z jakých svalů se rameno skládá? Tady se pozná, kdo rozumí detailům.",
+    "exits" : [
+      "main_hall"
+    ]
+  },
+  {
+    "id" : "yates",
+    "name" : "Temná síň masivních zad",
+    "description" : "Místnost je potemnělá a působí těžce. Dorian Yates stojí zády k tobě – a jeho záda vypadají spíš jako brnění než svaly. Bez otázek ti vysvětlí, co se stane, když zanedbáš jediný sval zad.",
+    "exits" : [
+      "main_hall"
+    ]
+  },
+  {
+    "id" : "cutler",
+    "name" : "Komnata tricepsové dominance",
+    "description" : "Jay Cutler leží vyčerpaný na lehátku. Jeho tricepsy vypadají, jako by měly vlastní gravitaci. Slabým hlasem tě požádá o proteinový shake. Pomůžeš mu, nebo ho necháš hladovět?",
+    "exits" : [
+      "main_hall"
+    ]
+  },
+  {
+    "id" : "zane",
+    "name" : "Galerie dokonalého břicha",
+    "description" : "Frank Zane pózuje u stěny plné obrazů svého těla. Každý detail břišních svalů je zachycen s uměleckou přesností. Když tě spatří, požádá tě, abys jeho postavu přenesl na plátno.",
+    "exits" : [
+      "main_hall"
+    ]
   }
-}
+]

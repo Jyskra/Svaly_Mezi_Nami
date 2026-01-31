@@ -18,11 +18,9 @@ public class DataLoader {
 
             InputStream input = new FileInputStream(roomDataPath);
 
-            Map<String, Room> rooms = parser.readValue(input, new TypeReference<Map<String, Room>>() {});
+            List<Room> rooms = parser.readValue(input, new TypeReference<List<Room>>() {});
 
-            List<Room> roomsList = new ArrayList<>(rooms.values());
-
-            return roomsList;
+            return rooms;
 
         }catch(IOException e){
             throw new RuntimeException(e);
