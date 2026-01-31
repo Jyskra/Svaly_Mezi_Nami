@@ -41,6 +41,17 @@ public class Room {
         this.id = id;
     }
 
+    public boolean isValidExit(String exitName){
+        if(exitName != null){
+            for(String exit : exits){
+                if(exitName.equalsIgnoreCase(exit)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
     @Override
     public String toString() {
         return "Game.Room{" +

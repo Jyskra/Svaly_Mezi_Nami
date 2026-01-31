@@ -14,5 +14,7 @@ public class Game {
     public void startGame(){
         List<Room> rooms = DataLoader.loadRoomData("resources/rooms.json");
         System.out.println(rooms);
+        System.out.println(rooms.get(0).isValidExit("yates"));
+        System.out.println(rooms.get(0).isValidExit("yate"));
     }
 }
