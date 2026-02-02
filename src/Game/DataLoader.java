@@ -6,9 +6,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 public class DataLoader {
     private static ObjectMapper parser = new ObjectMapper();
@@ -49,14 +47,13 @@ public class DataLoader {
         return null;
     }
 
-    public static List<Room> insertRoomCharacters(List<Room> rooms, List<Character> characters){
+    public static void insertRoomCharacters(List<Room> rooms, List<Character> characters){
         for(Character character : characters){
             Room room = getCharacterParent(rooms, character);
             if(room != null){
                 room.setCharacter(character);
             }
         }
-        return rooms;
     }
 
 }
