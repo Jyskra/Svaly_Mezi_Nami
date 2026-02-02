@@ -3,6 +3,8 @@ package Game;
 public class Character {
     private String name;
     private String description;
+    private String id;
+    private String parentId;
     private Task task;
     private int state;
 
@@ -15,6 +17,18 @@ public class Character {
         return task;
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public int getState() {
+        return state;
+    }
+
+    public String getParentId() {
+        return parentId;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -25,6 +39,18 @@ public class Character {
 
     public void setTask(Task task) {
         this.task = task;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setState(int state) {
+        this.state = state;
+    }
+
+    public void setParentId(String parentId) {
+        this.parentId = parentId;
     }
 
     public String talk(){

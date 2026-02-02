@@ -3,11 +3,17 @@ package Command;
 import Game.*;
 
 public class MoveCommand implements Command{
-    public String execute(Player player, Room room){
-        boolean completed = player.moveTo(room);
+
+    private Game game;
+
+    public MoveCommand(Game game){this.game = game;}
+
+    public String execute(String roomId){
+        boolean completed = game.canMoveTo(roomId);
         if (completed){
-            return "Moved to " + room.getName();
+            game.moveTo(roomId);
+            return "Moved to " + roomId;
         }
-        return "Unable to move to " + room.getName();
+        return "Unable to move to " + roomId;
     }
 }

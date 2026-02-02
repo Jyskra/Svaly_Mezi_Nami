@@ -1,5 +1,7 @@
 package Game;
 
+import java.util.Arrays;
+
 public class Room {
     private Character character;
     private String name;
@@ -54,10 +56,12 @@ public class Room {
 
     @Override
     public String toString() {
-        return "Game.Room{" +
+        return "Room{" +
                 "character=" + character +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
+                ", id='" + id + '\'' +
+                ", exits=" + Arrays.toString(exits) +
                 '}';
     }
 }

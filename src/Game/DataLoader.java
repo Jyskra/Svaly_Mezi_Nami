@@ -26,4 +26,37 @@ public class DataLoader {
             throw new RuntimeException(e);
         }
     }
+    public static List<Character> loadCharacterData(String roomDataPath){
+        try{
+
+            InputStream input = new FileInputStream(roomDataPath);
+
+            List<Character> characters = parser.readValue(input, new TypeReference<List<Character>>() {});
+
+            return characters;
+
+        }catch(IOException e){
+            throw new RuntimeException(e);
+        }
+    }
+
+    private static Room getCharacterParent(List<Room> rooms, Character character){
+        for (Room room : rooms){
+            if(character.getParentId().equals(room.getId())){
+                return room;
+            }
+        }
+        return null;
+    }
+
+    public static List<Room> insertRoomCharacters(List<Room> rooms, List<Character> characters){
+        for(Character character : characters){
+            Room room = getCharacterParent(rooms, character);
+            if(room != null){
+                room.setCharacter(character);
+            }
+        }
+        return rooms;
+    }
+
 }
