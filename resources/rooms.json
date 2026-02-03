@@ -1,9 +1,9 @@
 [
   {
-    "id" : "main_hall",
-    "name" : "Hlavní hala",
-    "description" : "Vstupuješ do hlavní haly kulturistického kongresu. Kolem tebe se pohybují legendy železa, vzduch je cítit potem a magnéziem. Odtud se můžeš vydat do kterékoliv z místností známých kulturistů.",
-    "exits" : [
+    "id": "main_hall",
+    "name": "Main Hall",
+    "description": "You enter the main hall of the bodybuilders' congress. Legends of iron move around you, and the air is thick with the scent of sweat and magnesium. From here, you can access any of the rooms of the famous bodybuilders.",
+    "exits": [
       "main_bodybuilder",
       "platz",
       "arnold",
@@ -14,58 +14,58 @@
     ]
   },
   {
-    "id" : "main_bodybuilder",
-    "name" : "Místnost hlavního kulturisty",
-    "description" : "Za masivním stolem sedí hlavní kulturista kongresu. Jeho pohled tě měří od hlavy k patě. Tady se rozhodne, zda jsi hoden tréninkového plánu… nebo jen další osy na tlaky.",
-    "exits" : [
+    "id": "main_bodybuilder",
+    "name": "Main Bodybuilder's Room",
+    "description": "The head bodybuilder of the congress sits behind a massive table. His gaze measures you from head to toe[cite: 34]. This is where it is decided if you are worthy of a training plan... or if you will serve as a one-time barbell for bench presses.",
+    "exits": [
       "main_hall"
     ]
   },
   {
-    "id" : "platz",
-    "name" : "Síň nekonečných dřepů",
-    "description" : "Vstoupil jsi do síně, kde se čas zastavil v nekonečných dřepech. Tom Platz stojí u naložené osy a s úsměvem bolesti v očích tě vyzývá, abys prokázal, že víš, jak se správně budují nohy.",
-    "exits" : [
+    "id": "platz",
+    "name": "Hall of Infinite Squats",
+    "description": "You have entered the hall where time stands still in infinite squats. Tom Platz stands leaning against a barbell in a squat cage and, with a smile of pain in his eyes, challenges you to prove you know the basics of proper leg development.",
+    "exits": [
       "main_hall"
     ]
   },
   {
-    "id" : "arnold",
-    "name" : "Chrám železného hrudníku",
-    "description" : "Arnold leží pod osou na lavičce a právě dokončil těžkou sérii. S úsměvem odloží osu a zadívá se na tebe. Pokud víš, kdy svaly opravdu rostou, možná se s tebou podělí o své znalosti.",
-    "exits" : [
+    "id": "arnold",
+    "name": "Temple of the Iron Chest",
+    "description": "Arnold Schwarzenegger lies on a bench under a barbell. He smiles as he sets the weight down and looks at you. If you know when muscles actually grow, he may share his knowledge with you.",
+    "exits": [
       "main_hall"
     ]
   },
   {
-    "id" : "levrone",
-    "name" : "Aréna deltové erupce",
-    "description" : "Zrcadla po stěnách odrážejí dokonalá ramena Kevina Levrona. Jakmile vstoupíš, otočí se k tobě a čeká. Víš, z jakých svalů se rameno skládá? Tady se pozná, kdo rozumí detailům.",
-    "exits" : [
+    "id": "levrone",
+    "name": "Arena of the Deltoid Eruption",
+    "description": "Mirrors along the walls reflect the perfect shoulders of Kevin Levrone. As soon as you enter, he turns toward you. Do you know which muscles the shoulder consists of? This is where true attention to detail is tested.",
+    "exits": [
       "main_hall"
     ]
   },
   {
-    "id" : "yates",
-    "name" : "Temná síň masivních zad",
-    "description" : "Místnost je potemnělá a působí těžce. Dorian Yates stojí zády k tobě – a jeho záda vypadají spíš jako brnění než svaly. Bez otázek ti vysvětlí, co se stane, když zanedbáš jediný sval zad.",
-    "exits" : [
+    "id": "yates",
+    "name": "Dark Hall of Massive Backs",
+    "description": "The room is darkened and feels heavy. Dorian Yates stands with his back to you—his physique appearing more like a mountain than a man. He will explain the consequences of neglecting any part of your back training.",
+    "exits": [
       "main_hall"
     ]
   },
   {
-    "id" : "cutler",
-    "name" : "Komnata tricepsové dominance",
-    "description" : "Jay Cutler leží vyčerpaný na lehátku. Jeho tricepsy vypadají, jako by měly vlastní gravitaci. Slabým hlasem tě požádá o proteinový shake. Pomůžeš mu, nebo ho necháš hladovět?",
-    "exits" : [
+    "id": "cutler",
+    "name": "Chamber of Tricep Dominance",
+    "description": "Jay Cutler is resting on a lounger. His triceps look as if they have their own gravity. With a weak voice, he asks you for a protein shake. Will you help him, or leave him to fade?",
+    "exits": [
       "main_hall"
     ]
   },
   {
-    "id" : "zane",
-    "name" : "Galerie dokonalého břicha",
-    "description" : "Frank Zane pózuje u stěny plné obrazů svého těla. Každý detail břišních svalů je zachycen s uměleckou přesností. Když tě spatří, požádá tě, abys jeho postavu přenesl na plátno.",
-    "exits" : [
+    "id": "zane",
+    "name": "Gallery of the Perfect Abs",
+    "description": "Frank Zane poses by a wall filled with paintings of his own physique[cite: 48, 49]. Every detail of his abdominal muscles is captured with artistic precision[cite: 49]. When he spots you, he asks you to paint his form onto a canvas[cite: 49].",
+    "exits": [
       "main_hall"
     ]
   }

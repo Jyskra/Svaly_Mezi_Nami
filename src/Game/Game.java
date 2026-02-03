@@ -34,8 +34,10 @@ public class Game {
 
         roomsList = DataLoader.loadRoomData("resources/rooms.json");
         List<Character> charactersList = DataLoader.loadCharacterData("resources/characters.json");
+        List<Task> tasks = DataLoader.loadTaskData("resources/tasks.json");
 
         DataLoader.insertRoomCharacters(roomsList, charactersList);
+        DataLoader.insertCharacterTasks(charactersList, tasks);
 
     }
 

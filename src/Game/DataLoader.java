@@ -38,6 +38,20 @@ public class DataLoader {
         }
     }
 
+    public static List<Task> loadTaskData(String roomDataPath){
+        try{
+
+            InputStream input = new FileInputStream(roomDataPath);
+
+            List<Task> tasks = parser.readValue(input, new TypeReference<List<Task>>() {});
+
+            return tasks;
+
+        }catch(IOException e){
+            throw new RuntimeException(e);
+        }
+    }
+
     private static Room getCharacterParent(List<Room> rooms, Character character){
         for (Room room : rooms){
             if(character.getParentId().equals(room.getId())){
@@ -52,6 +66,24 @@ public class DataLoader {
             Room room = getCharacterParent(rooms, character);
             if(room != null){
                 room.setCharacter(character);
+            }
+        }
+    }
+
+    public static Character getTaskParent(List<Character> characters, Task task){
+        for (Character character : characters){
+            if(task.getParentId().equals(character.getId())){
+                return character;
+            }
+        }
+        return null;
+    }
+
+    public static void insertCharacterTasks(List<Character> characters, List<Task> tasks){
+        for(Task task : tasks){
+            Character character = getTaskParent(characters, task);
+            if(character != null){
+                character.setTask(task);
             }
         }
     }

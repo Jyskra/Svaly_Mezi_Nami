@@ -2,43 +2,43 @@
   {
     "id": "main_bodybuilder",
     "parentId": "main_bodybuilder",
-    "name": "Hlavní kulturista",
-    "description": "Legendární sportovec, který vyhrál snad každou soutěž, do které se přihlásil. Celý život se věnuje pouze kulturistice a podle obsahu tvé knihy rozhodne, zda jsi hoden tréninkového plánu."
+    "name": "Main Bodybuilder",
+    "description": "A legendary athlete who has won virtually every competition he ever entered. He has dedicated his entire life to bodybuilding and will decide, based on the contents of your book, whether you are worthy of a training plan."
   },
   {
     "id": "tom_platz",
     "parentId": "platz",
     "name": "Tom Platz",
-    "description": "Kulturista proslulý svými neskutečně vyvinutými svaly na nohou. Emocionální bolest z rozchodu v mládí se rozhodl nahradit tou fyzickou při dřepech."
+    "description": "A bodybuilder famous for his incredibly developed leg muscles. He decided to replace the emotional pain of a youthful breakup with the physical pain of squats."
   },
   {
     "id": "arnold_schwarzenegger",
     "parentId": "arnold",
     "name": "Arnold Schwarzenegger",
-    "description": "Ikona s vynikající genetikou hrudníku a bicepsu, kterou rád dává na odiv. I když se nevěnuje pouze kulturistice, v kongresu patří k nejvýznamnějším osobnostem."
+    "description": "An icon blessed with excellent chest and bicep genetics, which he loves to show off. Though he is involved in more than just bodybuilding, he remains one of the most significant figures at the congress."
   },
   {
     "id": "kevin_levrone",
     "parentId": "levrone",
     "name": "Kevin Levrone",
-    "description": "Kulturista známý pro svá dokonalá ramena. Už od mládí toužil po široké postavě, která vypadá skvěle i v oblečení, což si tvrdým tréninkem splnil."
+    "description": "A bodybuilder known for his perfect shoulders. Since his youth, he desired a wide physique that looks great even in clothes, a goal he achieved through hard training."
   },
   {
     "id": "dorian_yates",
     "parentId": "yates",
     "name": "Dorian Yates",
-    "description": "Specialista na vypracování zad, který svým tvarem připomíná spíše chipsy Doritos než člověka. Věří v precizní trénink každého svalu, aby postava byla kompletní."
+    "description": "A specialist in back development whose shape resembles Doritos chips more than a human. He believes in the precise training of every muscle to ensure a complete physique."
   },
   {
     "id": "jay_cutler",
     "parentId": "cutler",
     "name": "Jay Cutler",
-    "description": "Držitel největších paží na světě, jehož tricepsy vypadají, jako by měly své vlastní svaly. Celý den nic nejedl ani nepil a čeká na svůj proteinový shake."
+    "description": "Owner of the largest arms in the world, with triceps that look as if they have their own muscles. He hasn't eaten or drunk anything all day and is waiting for his protein shake."
   },
   {
     "id": "frank_zane",
     "parentId": "zane",
     "name": "Frank Zane",
-    "description": "Estét s perfektním břichem, který se vyžívá v pózování a uměleckém ztvárnění své postavy. V galerii se snaží zachytit krásu svých svalů na plátno."
+    "description": "An aesthete with perfect abs who enjoys posing and artistic representations of his physique. In the gallery, he strives to capture the beauty of his muscles on canvas."
   }
 ]
