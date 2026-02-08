@@ -2,7 +2,6 @@ package Game;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class Game {
     private boolean playing;
@@ -13,6 +12,7 @@ public class Game {
     public static List<Room> roomsList = new ArrayList<>();
 
     public Game(){
+        this.playing = true;
     }
 
     public boolean canMoveTo(String roomId){
@@ -22,6 +22,14 @@ public class Game {
             }
         }
         return false;
+    }
+
+    public void setPlaying(boolean state){
+        this.playing = state;
+    }
+
+    public Room getCurrentRoom() {
+        return currentRoom;
     }
 
     public void moveTo(String roomId){
@@ -45,23 +53,26 @@ public class Game {
 
     private void loadValidCommands(){
 
+        validCommands.clear();
+
         validCommands.add("move");
+        validCommands.add("rooms");
         validCommands.add("save");
         validCommands.add("end");
         validCommands.add("help");
         validCommands.add("hint");
 
-        if(currentRoom.getCharacter().getCurrentState("isWaitingForAnAnswer")){
-            validCommands.add("answer");
-        }
-
         if(currentRoom.getCharacter() != null){
             validCommands.add("talk");
-        }
+            if(currentRoom.getCharacter().getCurrentState("isWaitingForAnAnswer")){
+                validCommands.add("answer");
+            }
 
-        if(currentRoom.getCharacter().getCurrentState("taskFinished")){
-            validCommands.add("thank");
-            validCommands.add("pickup");
+
+            if(currentRoom.getCharacter().getCurrentState("taskFinished")){
+                validCommands.add("thank");
+                validCommands.add("pickup");
+            }
         }
 
         if(currentRoom.hasItem()){
@@ -70,13 +81,34 @@ public class Game {
 
     }
 
+    private boolean validateCommand(String command){
+        String initialCommand = command.split(" ")[0];
+
+        return validCommands.contains(initialCommand);
+    }
+
     private void gameLoop(){
         while(playing){
 
             loadValidCommands();
 
-            String commandInfo = ui.takeUserInput("");
+            ui.print(validCommands.toString());
+            String commandInfo = ui.takeUserInput("Type out a command you want to use with a coresponding parameter.");
+            if (validateCommand(commandInfo)){
+                ui.execCommand(commandInfo);
+            }else{
+                ui.print("Command isnt available.");
+            }
 
+        }
+    }
+
+    private void initializeStart(){
+        String firstRoomId = "main_hall";
+        for(Room room : roomsList){
+            if(firstRoomId.equals(room.getId())){
+                this.currentRoom = room;
+            }
         }
     }
 
@@ -85,6 +117,12 @@ public class Game {
         loadData();
 
         this.ui = new UserInterface(this);
+        ui.loadCommands();
+
+        initializeStart();
+
+        gameLoop();
+
 
 
     }

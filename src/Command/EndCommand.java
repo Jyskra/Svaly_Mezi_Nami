@@ -11,6 +11,7 @@ public class EndCommand implements Command{
     }
 
     public String execute(String info){
-        return "";
+        game.setPlaying(false);
+        return "Ending game...";
     }
 }

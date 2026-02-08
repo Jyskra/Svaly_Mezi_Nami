@@ -26,6 +26,7 @@ public class UserInterface {
         commands.put("end", new EndCommand(game));
         commands.put("hint", new HintCommand(game));
         commands.put("help", new HelpCommand(game));
+        commands.put("rooms", new RoomsCommand(game));
     }
 
     public void print(String data){
@@ -33,18 +34,22 @@ public class UserInterface {
     }
 
     public String takeUserInput(String prompt){
+        print(prompt);
         String userInput = scanner.nextLine();
         return userInput;
     }
 
-    private void execCommand(String command){
+    public void execCommand(String command){
 
         String[] commandData = command.split(" ");
 
         String initialCommand = commandData[0];
-        String commandParam = commandData[1];
+        String commandParam = "";
+        if(commandData.length > 1){
+            commandParam = commandData[1];
+        }
 
-        boolean commandExists = commands.containsKey(command);
+        boolean commandExists = commands.containsKey(initialCommand);
         if(!commandExists){
             print("Invalid Command");
         }else {
