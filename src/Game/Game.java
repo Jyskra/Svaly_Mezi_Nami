@@ -1,16 +1,18 @@
 package Game;
 
-import javax.xml.crypto.Data;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Game {
+    private boolean playing;
     private Player player;
     private Room currentRoom;
+    private UserInterface ui;
+    private List<String> validCommands = new ArrayList<>();
     public static List<Room> roomsList = new ArrayList<>();
 
     public Game(){
-
     }
 
     public boolean canMoveTo(String roomId){
@@ -41,11 +43,48 @@ public class Game {
 
     }
 
+    private void loadValidCommands(){
+
+        validCommands.add("move");
+        validCommands.add("save");
+        validCommands.add("end");
+        validCommands.add("help");
+        validCommands.add("hint");
+
+        if(currentRoom.getCharacter().getCurrentState("isWaitingForAnAnswer")){
+            validCommands.add("answer");
+        }
+
+        if(currentRoom.getCharacter() != null){
+            validCommands.add("talk");
+        }
+
+        if(currentRoom.getCharacter().getCurrentState("taskFinished")){
+            validCommands.add("thank");
+            validCommands.add("pickup");
+        }
+
+        if(currentRoom.hasItem()){
+            validCommands.add("use");
+        }
+
+    }
+
+    private void gameLoop(){
+        while(playing){
+
+            loadValidCommands();
+
+            String commandInfo = ui.takeUserInput("");
+
+        }
+    }
+
     public void startGame(){
 
         loadData();
 
-        UserInterface ui = new UserInterface(this);
+        this.ui = new UserInterface(this);
 
 
     }

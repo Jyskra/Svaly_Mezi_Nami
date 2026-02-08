@@ -8,6 +8,7 @@ public class Room {
     private String description;
     private String id;
     private String[] exits;
+    private Item item;
 
     public Room() {}
 
@@ -21,6 +22,10 @@ public class Room {
 
     public String[] getExits() {
         return exits;
+    }
+
+    public Item getItem() {
+        return item;
     }
 
     public void setExits(String[] exits) {
@@ -41,6 +46,14 @@ public class Room {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public void setItem(Item item) {
+        this.item = item;
+    }
+
+    public boolean hasItem(){
+        return this.item != null;
     }
 
     public boolean isValidExit(String exitName){

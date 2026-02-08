@@ -8,10 +8,11 @@ import java.util.Scanner;
 public class UserInterface {
     HashMap<String, Command> commands = new HashMap<String, Command>();
     private Game game;
-    private Scanner scanner = new Scanner(System.in);
+    private Scanner scanner;
 
     public UserInterface(Game game) {
         this.game = game;
+        this.scanner = new Scanner(System.in);
     }
 
     public void loadCommands(){
