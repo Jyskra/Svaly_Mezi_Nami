@@ -20,9 +20,27 @@ public class Inventory {
         return currentNotes.get(index);
     }
 
-    public void addNote(Note note){
+    public Note removeNote(int index){
+        return currentNotes.remove(index);
+    }
+
+    public int getLength(){
+        return currentNotes.size();
+    }
+
+    public String addNote(Note note){
         if(currentNotes.size() < capacity){
             currentNotes.add(note);
+            return "Successfully added note";
         }
+        return "Inventory is full";
+    }
+
+    @Override
+    public String toString() {
+        return "Inventory{" +
+                "currentNotes=" + currentNotes.toString() +
+                ", capacity=" + capacity +
+                '}';
     }
 }

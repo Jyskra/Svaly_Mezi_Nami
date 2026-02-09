@@ -66,6 +66,30 @@ public class DataLoader {
         }
     }
 
+    public static List<Note> loadNoteData(String noteDataPath){
+        try{
+
+            InputStream input = new FileInputStream(noteDataPath);
+
+            List<Note> notes = parser.readValue(input, new TypeReference<List<Note>>() {});
+
+            return notes;
+
+        }catch(IOException e){
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static void insertCharacterNotes(List<Character> characters, List<Note> notes) {
+        for(Character character : characters){
+            for(Note note : notes){
+                if(note.getParentId().equals(character.getId())){
+                    character.setNote(note);
+                }
+            }
+        }
+    }
+
     public static void insertRoomItems(List<Room> rooms, List<Item> items){
         for(Item item : items){
             for (Room room : rooms){

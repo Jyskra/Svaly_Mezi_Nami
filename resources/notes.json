@@ -1,0 +1,38 @@
+[
+  {
+    "id": "note_legs",
+    "parentId": "tom_platz",
+    "muscleGroup": "Legs",
+    "noteData": "Squats are the foundation of a warrior. If you aren't shaking after a set, you haven't started yet. Replace your emotional pain with the physical pain of the leg press."
+  },
+  {
+    "id": "note_chest_biceps",
+    "parentId": "arnold_schwarzenegger",
+    "muscleGroup": "Chest and Biceps",
+    "noteData": "The pump is the greatest feeling in the world. You must visualize the muscle growing with every rep. Focus on the peak of the bicep and the width of the chest."
+  },
+  {
+    "id": "note_shoulders",
+    "parentId": "kevin_levrone",
+    "muscleGroup": "Shoulders",
+    "noteData": "To look wide in clothes, you must develop all three heads of the deltoid. Boulder shoulders are built through heavy overhead presses and strict lateral raises."
+  },
+  {
+    "id": "note_back",
+    "parentId": "dorian_yates",
+    "muscleGroup": "Back",
+    "noteData": "A massive back is like a shield. You must train every fiber from the lats to the traps with high intensity. Precision is more important than raw weight."
+  },
+  {
+    "id": "note_triceps",
+    "parentId": "jay_cutler",
+    "muscleGroup": "Triceps",
+    "noteData": "Do not be fooled by the bicep; the tricep makes up two-thirds of your arm's mass. Heavy extensions and dips will turn your arms into actual weapons."
+  },
+  {
+    "id": "note_abs",
+    "parentId": "frank_zane",
+    "muscleGroup": "Abs",
+    "noteData": "Bodybuilding is the art of symmetry. The vacuum pose is your greatest weapon. Abs are not just muscles; they are the center of your aesthetic canvas."
+  }
+]

@@ -16,8 +16,7 @@ public class UseCommand implements Command{
         if(currentRoom.hasItem()){
             boolean attempt = currentRoom.getCharacter().getTask().attemptCompletion(info);
             if(attempt){
-                currentRoom.getCharacter().taskDone();
-                return currentRoom.getItem().use();
+                return currentRoom.getItem().use() + "\n" + currentRoom.getCharacter().taskDone();
             }
             return currentRoom.getItem().getDescription();
         }

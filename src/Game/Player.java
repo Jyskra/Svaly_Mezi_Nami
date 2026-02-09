@@ -1,10 +1,19 @@
 package Game;
 
 public class Player {
-    private Task currentTask;
     private Inventory inventory;
     private Book book;
 
-    public Task getCurrentTask(){return null;}
-    public Room getCurrentRoom(){return null;}
+    public Player() {
+        this.inventory = new Inventory(1);
+        this.book = new Book();
+    }
+
+    public Inventory getInventory() {
+        return inventory;
+    }
+
+    public Book getBook() {
+        return book;
+    }
 }

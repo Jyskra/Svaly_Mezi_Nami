@@ -1,6 +1,7 @@
 package Command;
 
 import Game.Game;
+import Game.Player;
 
 public class SaveCommand implements Command{
 
@@ -11,6 +12,11 @@ public class SaveCommand implements Command{
     }
 
     public String execute(String info){
-        return "";
+        Player player = game.getPlayer();
+        if(player.getInventory().getLength() > 0) {
+            player.getBook().addNote(player.getInventory().removeNote(0));
+            return "Current note saved to your book";
+        }
+        return "No note to be saved";
     }
 }

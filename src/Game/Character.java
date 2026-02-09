@@ -1,7 +1,6 @@
 package Game;
 
 import java.util.HashMap;
-import java.util.Map;
 
 public class Character {
     private String name;
@@ -9,6 +8,7 @@ public class Character {
     private String id;
     private String parentId;
     private Task task;
+    private Note note;
     private HashMap<String, Boolean> states = new HashMap<>();
     private HashMap<String, String> dialogue = new HashMap<>();
 
@@ -16,6 +16,8 @@ public class Character {
         states.put("taskFinished", false);
         states.put("isWaitingForAnAnswer", false);
         states.put("taskGiven", false);
+        states.put("noteDropped", false);
+        states.put("notePickedUp", false);
     }
 
     public String getName(){return this.name;}
@@ -35,6 +37,14 @@ public class Character {
 
     public boolean getCurrentState(String data){
         return states.get(data);
+    }
+
+    public String getDialogueBit(String key){
+        return dialogue.get(key);
+    }
+
+    public Note getNote() {
+        return note;
     }
 
     public void setName(String name) {
@@ -61,11 +71,17 @@ public class Character {
         this.dialogue = dialogue;
     }
 
+    public void setNote(Note note) {
+        this.note = note;
+    }
+
     public String taskDone(){
         states.put("taskFinished", true);
         states.put("isWaitingForAnAnswer", false);
+        states.put("noteDropped", true);
+        states.put("notePickedUp", false);
+        note.setCanBePickedUp(true);
         return talk();
-        //TODO add reward
     }
 
     public String talk(){
@@ -81,11 +97,12 @@ public class Character {
             states.put("isWaitingForAnAnswer", true);
             states.put("taskGiven", true);
 
-        } else if (states.get("taskFinished")) {
+        } else if (states.get("noteDropped") & !states.get("notePickedUp")) {
 
-            talkString = dialogue.get("taskDone");
+            talkString = dialogue.get("taskDone") + "\n" + dialogue.get("noteDropped");
 
         }
+
         return talkString;
     }
 

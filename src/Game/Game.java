@@ -13,6 +13,11 @@ public class Game {
 
     public Game(){
         this.playing = true;
+        this.player = new Player();
+    }
+
+    public Player getPlayer() {
+        return this.player;
     }
 
     public boolean canMoveTo(String roomId){
@@ -46,7 +51,9 @@ public class Game {
         List<Character> charactersList = DataLoader.loadCharacterData("resources/characters.json");
         List<Task> tasks = DataLoader.loadTaskData("resources/tasks.json");
         List<Item> items = DataLoader.loadItemData("resources/items.json");
+        List<Note> notes = DataLoader.loadNoteData("resources/notes.json");
 
+        DataLoader.insertCharacterNotes(charactersList, notes);
         DataLoader.insertRoomCharacters(roomsList, charactersList);
         DataLoader.insertCharacterTasks(charactersList, tasks);
         DataLoader.insertRoomItems(roomsList, items);
@@ -66,14 +73,21 @@ public class Game {
 
         if(currentRoom.getCharacter() != null){
             validCommands.add("talk");
-            if(currentRoom.getCharacter().getCurrentState("isWaitingForAnAnswer")){
+            if(currentRoom.getCharacter().getCurrentState("isWaitingForAnAnswer") & !currentRoom.hasItem()){
                 validCommands.add("answer");
             }
 
 
             if(currentRoom.getCharacter().getCurrentState("taskFinished")){
-                validCommands.add("thank");
-                validCommands.add("pickup");
+                if(currentRoom.getCharacter().getCurrentState("notePickedUp")){
+
+                    validCommands.add("thank");
+
+                }else if(currentRoom.getCharacter().getNote().isCanBePickedUp()){
+
+                    validCommands.add("pickup");
+
+                }
             }
         }
 
@@ -124,7 +138,6 @@ public class Game {
         initializeStart();
 
         gameLoop();
-
 
 
     }

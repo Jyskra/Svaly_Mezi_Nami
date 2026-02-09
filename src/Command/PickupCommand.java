@@ -1,6 +1,7 @@
 package Command;
 
 import Game.Game;
+import Game.Room;
 
 public class PickupCommand implements Command{
 
@@ -11,6 +12,11 @@ public class PickupCommand implements Command{
     }
 
     public String execute(String info){
-        return "";
+        Room currentRoom = game.getCurrentRoom();
+        if(currentRoom.getCharacter().getNote().isCanBePickedUp()){
+            currentRoom.getCharacter().getNote().setCanBePickedUp(false);
+            return game.getPlayer().getInventory().addNote(currentRoom.getCharacter().getNote());
+        }
+        return "No note to pickup";
     }
 }
