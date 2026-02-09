@@ -9,7 +9,7 @@ public class HintCommand implements Command{
     public HintCommand(Game game){
         this.game = game;
     }
-
+    //TODO finish hint magic
     public String execute(String info){
         return "";
     }
