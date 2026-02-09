@@ -1,6 +1,7 @@
 package Command;
 
-import Game.Game;
+import Game.*;
+import Game.Character;
 
 public class AnswerCommand implements Command{
 
@@ -11,6 +12,13 @@ public class AnswerCommand implements Command{
     }
 
     public String execute(String info){
-        return "";
+
+        Character currentCharacter = game.getCurrentRoom().getCharacter();
+
+        boolean status = currentCharacter.getTask().attemptCompletion(info);
+        if(status){
+            return currentCharacter.taskDone();
+        }
+        return "Incorrect answer";
     }
 }

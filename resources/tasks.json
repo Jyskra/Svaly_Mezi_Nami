@@ -27,12 +27,12 @@
     "taskId": "jay_cutler_task",
     "parentId": "jay_cutler",
     "description": "Jay Cutler needs a protein shake.",
-    "correctAnswers": ["use shaker"]
+    "correctAnswers": ["shaker", "mixer"]
   },
   {
     "taskId": "frank_zane_task",
     "parentId": "frank_zane",
     "description": "Frank Zane asks you to paint his physique.",
-    "correctAnswers": ["use paintbrush"]
+    "correctAnswers": ["paintbrush", "brush"]
   }
 ]

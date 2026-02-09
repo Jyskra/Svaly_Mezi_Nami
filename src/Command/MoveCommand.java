@@ -13,7 +13,7 @@ public class MoveCommand implements Command{
         boolean completed = game.canMoveTo(roomId);
         if (completed){
             game.moveTo(roomId);
-            return "Moved to " + roomId;
+            return game.getCurrentRoom().getDescription();
         }
         return "Unable to move to " + roomId;
     }

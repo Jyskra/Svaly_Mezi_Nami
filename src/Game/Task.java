@@ -12,7 +12,6 @@ public class Task {
     public Task() {
     }
 
-    public void complete(){}
     public String getDescription(){return this.description;}
     public boolean isCompleted(){return this.completed;}
     public String[] getCorrectAnswers(){return this.correctAnswers;}
@@ -43,6 +42,14 @@ public class Task {
 
     public void setCorrectAnswers(String[] correctAnswers) {
         this.correctAnswers = correctAnswers;
+    }
+
+    public boolean attemptCompletion(String data){
+        if (Arrays.asList(correctAnswers).contains(data)) {
+            completed = true;
+            return completed;
+        }
+        return false;
     }
 
     @Override

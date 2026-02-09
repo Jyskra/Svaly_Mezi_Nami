@@ -11,6 +11,6 @@ public class CharacterInteractCommand implements Command{
     }
 
     public String execute(String info){
-        return "";
+        return game.getCurrentRoom().getCharacter().talk();
     }
 }

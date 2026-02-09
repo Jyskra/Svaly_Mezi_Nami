@@ -52,6 +52,30 @@ public class DataLoader {
         }
     }
 
+    public static List<Item> loadItemData(String itemDataPath){
+        try{
+
+            InputStream input = new FileInputStream(itemDataPath);
+
+            List<Item> items = parser.readValue(input, new TypeReference<List<Item>>() {});
+
+            return items;
+
+        }catch(IOException e){
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static void insertRoomItems(List<Room> rooms, List<Item> items){
+        for(Item item : items){
+            for (Room room : rooms){
+                if (item.getTargetRoomId().equals(room.getId())){
+                    room.setItem(item);
+                }
+            }
+        }
+    }
+
     private static Room getCharacterParent(List<Room> rooms, Character character){
         for (Room room : rooms){
             if(character.getParentId().equals(room.getId())){

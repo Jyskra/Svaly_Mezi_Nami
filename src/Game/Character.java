@@ -1,6 +1,7 @@
 package Game;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class Character {
     private String name;
@@ -9,6 +10,7 @@ public class Character {
     private String parentId;
     private Task task;
     private HashMap<String, Boolean> states = new HashMap<>();
+    private HashMap<String, String> dialogue = new HashMap<>();
 
     public Character() {
         states.put("taskFinished", false);
@@ -55,10 +57,37 @@ public class Character {
         this.parentId = parentId;
     }
 
+    public void setDialogue(HashMap<String, String> dialogue) {
+        this.dialogue = dialogue;
+    }
+
+    public String taskDone(){
+        states.put("taskFinished", true);
+        states.put("isWaitingForAnAnswer", false);
+        return talk();
+        //TODO add reward
+    }
+
     public String talk(){
-        //TODO add dialogue logic, meaning different outputs based on how advanced the state is.
-        return null;
-    };
+        String talkString = "";
+        if(states.get("isWaitingForAnAnswer")){
+
+            talkString = dialogue.get("waitingForTaskToBeDone");
+
+        }else if(!states.get("taskGiven")){
+
+            talkString = dialogue.get("intro");
+            talkString += "\n" + task.getDescription();
+            states.put("isWaitingForAnAnswer", true);
+            states.put("taskGiven", true);
+
+        } else if (states.get("taskFinished")) {
+
+            talkString = dialogue.get("taskDone");
+
+        }
+        return talkString;
+    }
 
     @Override
     public String toString() {

@@ -1,0 +1,16 @@
+[
+  {
+    "itemId": "protein_shaker",
+    "name": "Protein Shaker",
+    "description": "A plastic container is presented to you. It features the official congress logo and feels heavy in your hand. As you move it, you can hear a thick liquid splashing against the sides, releasing a faint scent of vanilla protein.",
+    "action": "You shook the shaker so vigorously that even Jay Cutler gave an approving nod. The protein is perfectly mixed and ready to be served.",
+    "targetRoomId": "cutler"
+  },
+  {
+    "itemId": "paint_brush",
+    "name": "Paintbrush",
+    "description": "A fine-tipped paintbrush is presented to you. Its wooden handle is smooth from years of use, and the bristles are soft yet firm, clearly designed for high-level artistic precision.",
+    "action": "With graceful strokes, you begin applying paint to the canvas. Frank Zane poses patiently as a masterpiece is born under your hands.",
+    "targetRoomId": "zane"
+  }
+]
