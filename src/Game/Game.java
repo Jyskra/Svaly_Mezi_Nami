@@ -10,6 +10,7 @@ public class Game {
     private UserInterface ui;
     private List<String> validCommands = new ArrayList<>();
     public static List<Room> roomsList = new ArrayList<>();
+    public int totalAmountOfNotes;
 
     public Game(){
         this.playing = true;
@@ -58,6 +59,7 @@ public class Game {
         DataLoader.insertCharacterTasks(charactersList, tasks);
         DataLoader.insertRoomItems(roomsList, items);
 
+        totalAmountOfNotes = notes.size();
     }
 
     private void loadValidCommands(){

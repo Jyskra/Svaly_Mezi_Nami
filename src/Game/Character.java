@@ -1,6 +1,20 @@
 package Game;
 
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+
 import java.util.HashMap;
+
+@JsonTypeInfo(
+        use = JsonTypeInfo.Id.NAME,
+        include = JsonTypeInfo.As.PROPERTY,
+        property = "id",
+        visible = true,
+        defaultImpl = Character.class
+)
+@JsonSubTypes({
+        @JsonSubTypes.Type(value = MainBodybuilder.class, name = "main_bodybuilder")
+})
 
 public class Character {
     private String name;

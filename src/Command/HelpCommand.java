@@ -10,7 +10,8 @@ public class HelpCommand implements Command{
         this.game = game;
     }
 
+    //shows all available commands
     public String execute(String info){
-        return "";
+        return "Here is the list of all available commands:";
     }
 }

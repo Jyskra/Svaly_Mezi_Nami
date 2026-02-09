@@ -18,8 +18,6 @@ public class Book extends Item{
         return notes;
     }
 
-    public boolean containsAllNotes(){return false;}
-
     @Override
     public String toString() {
         return "Book{" +
