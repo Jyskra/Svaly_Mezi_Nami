@@ -120,6 +120,8 @@ public class Game {
     }
 
     private void gameLoop(){
+        //TODO add pepik monologue
+
         while(playing){
 
             loadValidCommands();
