@@ -16,6 +16,9 @@ public class UserInterface {
     }
 
     public void loadCommands(){
+        EndCommand end = new EndCommand(game);
+        game.addEndToMainBodybuilder(end);
+
         commands.put("move", new MoveCommand(game));
         commands.put("talk", new CharacterInteractCommand(game));
         commands.put("answer", new AnswerCommand(game));
@@ -23,7 +26,7 @@ public class UserInterface {
         commands.put("pickup", new PickupCommand(game));
         commands.put("save", new SaveCommand(game));
         commands.put("use", new UseCommand(game));
-        commands.put("end", new EndCommand(game));
+        commands.put("end", end);
         commands.put("hint", new HintCommand(game));
         commands.put("help", new HelpCommand(game));
         commands.put("rooms", new RoomsCommand(game));

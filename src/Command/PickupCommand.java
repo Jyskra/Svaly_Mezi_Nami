@@ -15,6 +15,7 @@ public class PickupCommand implements Command{
         Room currentRoom = game.getCurrentRoom();
         if(currentRoom.getCharacter().getNote().isCanBePickedUp()){
             currentRoom.getCharacter().getNote().setCanBePickedUp(false);
+            currentRoom.getCharacter().setState("notePickedUp", true);
             return game.getPlayer().getInventory().addNote(currentRoom.getCharacter().getNote());
         }
         return "No note to pickup";

@@ -1,5 +1,11 @@
 [
   {
+    "id" : "note_main",
+    "parentId" : "main_bodybuilder",
+    "muscleGroup" : "All",
+    "noteData" : ""
+  },
+  {
     "id": "note_legs",
     "parentId": "tom_platz",
     "muscleGroup": "Legs",

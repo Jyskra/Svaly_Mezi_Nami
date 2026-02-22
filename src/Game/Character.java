@@ -1,5 +1,6 @@
 package Game;
 
+import Command.EndCommand;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
@@ -89,16 +90,22 @@ public class Character {
         this.note = note;
     }
 
+    public void setEnd(EndCommand end){}
+
+    public void setState(String key, boolean value){
+        states.put(key, value);
+    }
+
     public String taskDone(){
         states.put("taskFinished", true);
         states.put("isWaitingForAnAnswer", false);
         states.put("noteDropped", true);
         states.put("notePickedUp", false);
         note.setCanBePickedUp(true);
-        return talk();
+        return talk(null);
     }
 
-    public String talk(){
+    public String talk(Player player){
         String talkString = "";
         if(states.get("isWaitingForAnAnswer")){
 
@@ -107,7 +114,9 @@ public class Character {
         }else if(!states.get("taskGiven")){
 
             talkString = dialogue.get("intro");
-            talkString += "\n" + task.getDescription();
+            if(task != null){
+                talkString += "\n" + task.getDescription();
+            }
             states.put("isWaitingForAnAnswer", true);
             states.put("taskGiven", true);
 

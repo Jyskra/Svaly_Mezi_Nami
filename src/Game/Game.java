@@ -1,16 +1,19 @@
 package Game;
 
+import Command.EndCommand;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Game {
     private boolean playing;
+    public boolean status;
     private Player player;
     private Room currentRoom;
     private UserInterface ui;
     private List<String> validCommands = new ArrayList<>();
     public static List<Room> roomsList = new ArrayList<>();
-    public int totalAmountOfNotes;
+    public static int totalAmountOfNotes;
 
     public Game(){
         this.playing = true;
@@ -46,6 +49,16 @@ public class Game {
         }
     }
 
+    public void addEndToMainBodybuilder(EndCommand end){
+        for(Room room : roomsList){
+            if(room.getCharacter() != null){
+                if(room.getCharacter().getClass() == MainBodybuilder.class){
+                    room.getCharacter().setEnd(end);
+                }
+            }
+        }
+    }
+
     private void loadData(){
 
         roomsList = DataLoader.loadRoomData("resources/rooms.json");
@@ -75,7 +88,8 @@ public class Game {
 
         if(currentRoom.getCharacter() != null){
             validCommands.add("talk");
-            if(currentRoom.getCharacter().getCurrentState("isWaitingForAnAnswer") & !currentRoom.hasItem()){
+            if(currentRoom.getCharacter().getCurrentState("isWaitingForAnAnswer") & !currentRoom.hasItem()
+                    & currentRoom.getCharacter().getClass() != MainBodybuilder.class){
                 validCommands.add("answer");
             }
 
@@ -119,6 +133,12 @@ public class Game {
             }
 
         }
+        if(status){
+            ui.print("You have successfully beaten the game.");
+        }else{
+            ui.print("You have sadly lost the game, try again!");
+        }
+
     }
 
     private void initializeStart(){
@@ -131,7 +151,6 @@ public class Game {
     }
 
     public void startGame(){
-
         loadData();
 
         this.ui = new UserInterface(this);
