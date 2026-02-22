@@ -16,7 +16,7 @@
   {
     "id": "main_bodybuilder",
     "name": "Main Bodybuilder's Room",
-    "description": "The head bodybuilder of the congress sits behind a massive table. His gaze measures you from head to toe[cite: 34]. This is where it is decided if you are worthy of a training plan... or if you will serve as a one-time barbell for bench presses.",
+    "description": "The head bodybuilder of the congress sits behind a massive table. His gaze measures you from head to toe[cite: 34]. This is where it is decided if you are worthy of a training plan... or if you will serve as a one-time barbell for bench presses. Dont mess with him unless you have completed all the other tasks.",
     "exits": [
       "main_hall"
     ]
