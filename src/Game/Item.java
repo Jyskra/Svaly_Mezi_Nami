@@ -1,5 +1,8 @@
 package Game;
-
+/**
+ * this class is a usable item
+ * @author Jiří Baudyš
+ */
 public class Item {
 
     private String itemId;

@@ -1,5 +1,8 @@
 package Game;
-
+/**
+ * this class is the note, which the player is trying to get ahold of
+ * @author Jiří Baudyš
+ */
 public class Note extends Item{
     private String muscleGroup;
     private String noteData;

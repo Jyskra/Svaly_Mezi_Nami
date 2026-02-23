@@ -16,7 +16,10 @@ import java.util.HashMap;
 @JsonSubTypes({
         @JsonSubTypes.Type(value = MainBodybuilder.class, name = "main_bodybuilder")
 })
-
+/**
+ * this class creates the interactable characters
+ * @author Jiří Baudyš
+ */
 public class Character {
     private String name;
     private String description;
@@ -27,6 +30,9 @@ public class Character {
     private HashMap<String, Boolean> states = new HashMap<>();
     private HashMap<String, String> dialogue = new HashMap<>();
 
+    /**
+     * sets up the characters available states
+     */
     public Character() {
         states.put("taskFinished", false);
         states.put("isWaitingForAnAnswer", false);
@@ -96,6 +102,10 @@ public class Character {
         states.put(key, value);
     }
 
+    /**
+     * sets all the states the character is in by a task being completed
+     * @return what the character has to say after their task has been completed
+     */
     public String taskDone(){
         states.put("taskFinished", true);
         states.put("isWaitingForAnAnswer", false);
@@ -105,6 +115,12 @@ public class Character {
         return talk(null);
     }
 
+    /**
+     * depending on the current states the character is in, meaning if they have given out their task, waiting for it to be completed or even handed out the reward
+     * gives the player corresponding feedback to show them what they are waiting for or what they need and want
+     * @param player the current player
+     * @return feedback to the player
+     */
     public String talk(Player player){
         String talkString = "";
         if(states.get("isWaitingForAnAnswer")){

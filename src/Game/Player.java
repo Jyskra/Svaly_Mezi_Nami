@@ -1,5 +1,8 @@
 package Game;
-
+/**
+ * this class is basically the holder of all player storage
+ * @author Jiří Baudyš
+ */
 public class Player {
     private Inventory inventory;
     private Book book;

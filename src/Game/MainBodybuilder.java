@@ -1,7 +1,10 @@
 package Game;
 
 import Command.EndCommand;
-
+/**
+ * this class is the final boss of the whole game, the player either wins or loses by talking to this monster
+ * @author Jiří Baudyš
+ */
 public class MainBodybuilder extends Character{
     public MainBodybuilder() {
         super();
@@ -13,6 +16,11 @@ public class MainBodybuilder extends Character{
         this.end = end;
     }
 
+    /**
+     * custom functions for when the player wants to talk to this titan
+     * @param player the current player
+     * @return what the main bodybuilder has to say to the player
+     */
     public String talk(Player player) {
 
         if(super.getCurrentState("isWaitingForAnAnswer")){

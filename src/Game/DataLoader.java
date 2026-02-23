@@ -7,10 +7,18 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
-
+/**
+ * this class loads the entire game up from json files so all the data can be easily changed and interacted with
+ * @author Jiří Baudyš
+ */
 public class DataLoader {
     private static ObjectMapper parser = new ObjectMapper();
 
+    /**
+     * loads up all data about rooms in the game
+     * @param roomDataPath path to the rooms json
+     * @return a list of all the rooms
+     */
     public static List<Room> loadRoomData(String roomDataPath){
         try{
 
@@ -24,10 +32,16 @@ public class DataLoader {
             throw new RuntimeException(e);
         }
     }
-    public static List<Character> loadCharacterData(String roomDataPath){
+
+    /**
+     * loads up all the data about characters in the game
+     * @param characterDataPath path to the characters json
+     * @return a list of all the characters inside the game rooms
+     */
+    public static List<Character> loadCharacterData(String characterDataPath){
         try{
 
-            InputStream input = new FileInputStream(roomDataPath);
+            InputStream input = new FileInputStream(characterDataPath);
 
             List<Character> characters = parser.readValue(input, new TypeReference<List<Character>>() {});
 
@@ -38,10 +52,15 @@ public class DataLoader {
         }
     }
 
-    public static List<Task> loadTaskData(String roomDataPath){
+    /**
+     * loads up all the data about tasks in the game
+     * @param taskDataPath path to the tasks json
+     * @return a list of all the tasks inside the characters
+     */
+    public static List<Task> loadTaskData(String taskDataPath){
         try{
 
-            InputStream input = new FileInputStream(roomDataPath);
+            InputStream input = new FileInputStream(taskDataPath);
 
             List<Task> tasks = parser.readValue(input, new TypeReference<List<Task>>() {});
 
@@ -52,6 +71,11 @@ public class DataLoader {
         }
     }
 
+    /**
+     * loads up all the data about items in the game
+     * @param itemDataPath path to the items json
+     * @return a list of all the game items
+     */
     public static List<Item> loadItemData(String itemDataPath){
         try{
 
@@ -66,6 +90,11 @@ public class DataLoader {
         }
     }
 
+    /**
+     * loads all the note data in the game
+     * @param noteDataPath path to the notes json
+     * @return a list of all the notes
+     */
     public static List<Note> loadNoteData(String noteDataPath){
         try{
 
@@ -80,6 +109,11 @@ public class DataLoader {
         }
     }
 
+    /**
+     * inserts all notes in their corresponding character
+     * @param characters the list of characters
+     * @param notes the list of notes
+     */
     public static void insertCharacterNotes(List<Character> characters, List<Note> notes) {
         for(Character character : characters){
             for(Note note : notes){
@@ -90,6 +124,11 @@ public class DataLoader {
         }
     }
 
+    /**
+     * inserts all items into their corresponding rooms
+     * @param rooms the list of rooms
+     * @param items the list of items
+     */
     public static void insertRoomItems(List<Room> rooms, List<Item> items){
         for(Item item : items){
             for (Room room : rooms){
@@ -100,6 +139,12 @@ public class DataLoader {
         }
     }
 
+    /**
+     * gets the room parent of a character based on their id
+     * @param rooms list of rooms
+     * @param character the character the parent is in search of
+     * @return the room that is the parent of the character
+     */
     private static Room getCharacterParent(List<Room> rooms, Character character){
         for (Room room : rooms){
             if(character.getParentId().equals(room.getId())){
@@ -109,6 +154,11 @@ public class DataLoader {
         return null;
     }
 
+    /**
+     * inserts all charcters into their corresponding rooms
+     * @param rooms list of all the rooms in the gme
+     * @param characters list of all the characters in the game
+     */
     public static void insertRoomCharacters(List<Room> rooms, List<Character> characters){
         for(Character character : characters){
             Room room = getCharacterParent(rooms, character);
@@ -118,6 +168,12 @@ public class DataLoader {
         }
     }
 
+    /**
+     * gets the character parent of a task
+     * @param characters list of all the characters
+     * @param task the task of which the parent is in search of
+     * @return the character which is the parent of the task
+     */
     public static Character getTaskParent(List<Character> characters, Task task){
         for (Character character : characters){
             if(task.getParentId().equals(character.getId())){
@@ -127,6 +183,11 @@ public class DataLoader {
         return null;
     }
 
+    /**
+     * inserts all tasks into their respective character
+     * @param characters list of all the characters
+     * @param tasks list of all the tasks
+     */
     public static void insertCharacterTasks(List<Character> characters, List<Task> tasks){
         for(Task task : tasks){
             Character character = getTaskParent(characters, task);

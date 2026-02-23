@@ -1,7 +1,10 @@
 package Game;
 
 import java.util.Arrays;
-
+/**
+ * this class serves as a quest handed out to the player by each character
+ * @author Jiří Baudyš
+ */
 public class Task {
     private String taskId;
     private String parentId;

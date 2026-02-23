@@ -2,7 +2,10 @@ package Command;
 
 import Game.Game;
 import Game.Player;
-
+/**
+ * this class saves notes from inventory to the players book
+ * @author Jiří Baudyš
+ */
 public class SaveCommand implements Command{
 
     private Game game;
@@ -11,7 +14,10 @@ public class SaveCommand implements Command{
         this.game = game;
     }
 
-    public String execute(String info){
+    /**
+     * @return what was done with the current note the player tried to save
+     */
+    public String execute(){
         Player player = game.getPlayer();
         if(player.getInventory().getLength() > 0) {
             player.getBook().addNote(player.getInventory().removeNote(0));

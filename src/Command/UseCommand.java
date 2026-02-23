@@ -2,7 +2,10 @@ package Command;
 
 import Game.Game;
 import Game.*;
-
+/**
+ * this class executes any item activity
+ * @author Jiří Baudyš
+ */
 public class UseCommand implements Command{
 
     private Game game;
@@ -11,6 +14,11 @@ public class UseCommand implements Command{
         this.game = game;
     }
 
+    /**
+     *
+     * @param info what item the player is trying to use
+     * @return feedback what happened when the player tried to use an item
+     */
     public String execute(String info){
         Room currentRoom = game.getCurrentRoom();
         if(currentRoom.hasItem()){

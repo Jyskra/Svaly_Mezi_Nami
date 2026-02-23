@@ -2,7 +2,10 @@ package Game;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * this class stores all player acquired notes
+ * @author Jiří Baudyš
+ */
 public class Book extends Item{
     private List<Note> notes;
 

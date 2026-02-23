@@ -1,7 +1,10 @@
 package Game;
 
 import java.util.Arrays;
-
+/**
+ * this class is a physical room the player enters and where they interact with all characters inside the game
+ * @author Jiří Baudyš
+ */
 public class Room {
     private Character character;
     private String name;
@@ -56,6 +59,11 @@ public class Room {
         return this.item != null;
     }
 
+    /**
+     * checks if an exit the player is trying to access is valid respective to this room or not
+     * @param exitName the exit the player is trying to access
+     * @return whether it is or is not a valid exit
+     */
     public boolean isValidExit(String exitName){
         if(exitName != null){
             for(String exit : exits){

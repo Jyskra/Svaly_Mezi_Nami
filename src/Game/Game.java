@@ -4,7 +4,10 @@ import Command.EndCommand;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * this class contains the main game loop and merges all the game functions together
+ * @author Jiří Baudyš
+ */
 public class Game {
     private boolean playing;
     public boolean status;
@@ -25,12 +28,8 @@ public class Game {
     }
 
     public boolean canMoveTo(String roomId){
-        for (Room room : roomsList){
-            if (roomId.equalsIgnoreCase(room.getId())){
-                return true;
-            }
-        }
-        return false;
+
+        return currentRoom.isValidExit(roomId);
     }
 
     public void setPlaying(boolean state){
@@ -41,6 +40,10 @@ public class Game {
         return currentRoom;
     }
 
+    /**
+     * moves the player into their desired room if available
+     * @param roomId the room id the player is trying to access
+     */
     public void moveTo(String roomId){
         for (Room room : roomsList){
             if (roomId.equalsIgnoreCase(room.getId())){
@@ -49,6 +52,10 @@ public class Game {
         }
     }
 
+    /**
+     * adds the ability for the main bodybuilder to end the game whenever he feels disappointed
+     * @param end the command that ends the game
+     */
     public void addEndToMainBodybuilder(EndCommand end){
         for(Room room : roomsList){
             if(room.getCharacter() != null){
@@ -59,6 +66,9 @@ public class Game {
         }
     }
 
+    /**
+     * initializes all the game data loading happening in data loader
+     */
     private void loadData(){
 
         roomsList = DataLoader.loadRoomData("resources/rooms.json");
@@ -75,6 +85,9 @@ public class Game {
         totalAmountOfNotes = notes.size();
     }
 
+    /**
+     * loads all commands available to the player after each loop
+     */
     private void loadValidCommands(){
 
         validCommands.clear();
@@ -113,12 +126,20 @@ public class Game {
 
     }
 
+    /**
+     * checks if a command provided by the player is an actual existing command
+     * @param command the string provided by the player
+     * @return validity of the command
+     */
     private boolean validateCommand(String command){
         String initialCommand = command.split(" ")[0];
 
         return validCommands.contains(initialCommand);
     }
 
+    /**
+     * the main game loop, goes until the player wins or ends the game either by upsetting the main bodybuilder or ending it manually
+     */
     private void gameLoop(){
         //TODO add pepik monologue
 
@@ -143,6 +164,9 @@ public class Game {
 
     }
 
+    /**
+     * makes the starting room the main hall
+     */
     private void initializeStart(){
         String firstRoomId = "main_hall";
         for(Room room : roomsList){
@@ -152,6 +176,9 @@ public class Game {
         }
     }
 
+    /**
+     * initializes the use of all functions
+     */
     public void startGame(){
         loadData();
 
