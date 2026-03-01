@@ -107,11 +107,13 @@ public class Character {
      * @return what the character has to say after their task has been completed
      */
     public String taskDone(){
-        states.put("taskFinished", true);
-        states.put("isWaitingForAnAnswer", false);
-        states.put("noteDropped", true);
-        states.put("notePickedUp", false);
-        note.setCanBePickedUp(true);
+        if(!states.get("taskFinished")){
+            states.put("taskFinished", true);
+            states.put("isWaitingForAnAnswer", false);
+            states.put("noteDropped", true);
+            states.put("notePickedUp", false);
+            note.setCanBePickedUp(true);
+        }
         return talk(null);
     }
 
@@ -123,6 +125,10 @@ public class Character {
      */
     public String talk(Player player){
         String talkString = "";
+        if(states.get("taskFinished")){
+            talkString = "There is nothing else to tell you, good luck.";
+        }
+
         if(states.get("isWaitingForAnAnswer")){
 
             talkString = dialogue.get("waitingForTaskToBeDone");
@@ -140,9 +146,8 @@ public class Character {
 
             talkString = dialogue.get("taskDone") + "\n" + dialogue.get("noteDropped");
 
-        } else{
-            talkString = "There is nothing else to tell you, good luck.";
         }
+
 
         return talkString;
     }
