@@ -148,7 +148,7 @@ public class Game {
      * the main game loop, goes until the player wins or ends the game either by upsetting the main bodybuilder or ending it manually
      */
     private void gameLoop(){
-        //ui.printAnimated(monologue);
+        ui.printAnimated(monologue);
 
         while(playing){
 
@@ -170,6 +170,8 @@ public class Game {
         }else{
             ui.print("You have sadly lost the game, try again!");
         }
+
+        ui.takeUserInput("");
 
     }
 
