@@ -11,12 +11,14 @@ import java.util.List;
 public class Game {
     private boolean playing;
     public boolean status;
+    private String monologue;
     private Player player;
     private Room currentRoom;
     private UserInterface ui;
     private List<String> validCommands = new ArrayList<>();
     public static List<Room> roomsList = new ArrayList<>();
     public static int totalAmountOfNotes;
+
 
     public Game(){
         this.playing = true;
@@ -70,6 +72,8 @@ public class Game {
      * initializes all the game data loading happening in data loader
      */
     private void loadData(){
+
+        monologue = DataLoader.loadMonologue("resources/monologue.json");
 
         roomsList = DataLoader.loadRoomData("resources/rooms.json");
         List<Character> charactersList = DataLoader.loadCharacterData("resources/characters.json");
@@ -141,7 +145,7 @@ public class Game {
      * the main game loop, goes until the player wins or ends the game either by upsetting the main bodybuilder or ending it manually
      */
     private void gameLoop(){
-        //TODO add pepik monologue
+        ui.print(monologue);
 
         while(playing){
 

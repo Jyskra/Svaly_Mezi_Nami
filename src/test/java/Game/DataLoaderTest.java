@@ -16,6 +16,12 @@ class DataLoaderTest {
     }
 
     @Test
+    void loadMonologue(){
+        String monologue = DataLoader.loadMonologue("resources/monologue.json");
+        assertNotNull(monologue, "The string should exist.");
+    }
+
+    @Test
     void loadRoomData() {
         List<Room> rooms = DataLoader.loadRoomData("resources/rooms.json");
         assertNotNull(rooms, "The list of rooms should not be null");

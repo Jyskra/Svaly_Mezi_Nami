@@ -42,8 +42,20 @@ public class UserInterface {
      * prints out data to the user
      * @param data data that needs to be printed to the console
      */
-    public void print(String data){
-        System.out.println(data);
+    public void print(String data) {
+        for (int i = 0; i < data.length(); i++) {
+            System.out.print(data.charAt(i));
+
+            System.out.flush();
+
+            try {
+                Thread.sleep(50);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                break;
+            }
+        }
+        System.out.println();
     }
 
     /**

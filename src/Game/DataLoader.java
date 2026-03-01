@@ -14,6 +14,16 @@ import java.util.List;
 public class DataLoader {
     private static ObjectMapper parser = new ObjectMapper();
 
+
+    public static String loadMonologue(String monologuePath){
+        try{
+            InputStream input = new FileInputStream(monologuePath);
+            return parser.readValue(input, String.class);
+        }catch(IOException e){
+            throw new RuntimeException();
+        }
+    }
+
     /**
      * loads up all data about rooms in the game
      * @param roomDataPath path to the rooms json
