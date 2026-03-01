@@ -73,13 +73,13 @@ public class Game {
      */
     private void loadData(){
 
-        monologue = DataLoader.loadMonologue("resources/monologue.json");
+        monologue = DataLoader.loadMonologue("monologue.json");
 
-        roomsList = DataLoader.loadRoomData("resources/rooms.json");
-        List<Character> charactersList = DataLoader.loadCharacterData("resources/characters.json");
-        List<Task> tasks = DataLoader.loadTaskData("resources/tasks.json");
-        List<Item> items = DataLoader.loadItemData("resources/items.json");
-        List<Note> notes = DataLoader.loadNoteData("resources/notes.json");
+        roomsList = DataLoader.loadRoomData("rooms.json");
+        List<Character> charactersList = DataLoader.loadCharacterData("characters.json");
+        List<Task> tasks = DataLoader.loadTaskData("tasks.json");
+        List<Item> items = DataLoader.loadItemData("items.json");
+        List<Note> notes = DataLoader.loadNoteData("notes.json");
 
         DataLoader.insertCharacterNotes(charactersList, notes);
         DataLoader.insertRoomCharacters(roomsList, charactersList);

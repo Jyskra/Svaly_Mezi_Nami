@@ -17,7 +17,7 @@ public class DataLoader {
 
     public static String loadMonologue(String monologuePath){
         try{
-            InputStream input = new FileInputStream(monologuePath);
+            InputStream input = DataLoader.class.getClassLoader().getResourceAsStream(monologuePath);
             return parser.readValue(input, String.class);
         }catch(IOException e){
             throw new RuntimeException();
@@ -32,7 +32,7 @@ public class DataLoader {
     public static List<Room> loadRoomData(String roomDataPath){
         try{
 
-            InputStream input = new FileInputStream(roomDataPath);
+            InputStream input = DataLoader.class.getClassLoader().getResourceAsStream(roomDataPath);
 
             List<Room> rooms = parser.readValue(input, new TypeReference<List<Room>>() {});
 
@@ -51,7 +51,7 @@ public class DataLoader {
     public static List<Character> loadCharacterData(String characterDataPath){
         try{
 
-            InputStream input = new FileInputStream(characterDataPath);
+            InputStream input = DataLoader.class.getClassLoader().getResourceAsStream(characterDataPath);
 
             List<Character> characters = parser.readValue(input, new TypeReference<List<Character>>() {});
 
@@ -70,7 +70,7 @@ public class DataLoader {
     public static List<Task> loadTaskData(String taskDataPath){
         try{
 
-            InputStream input = new FileInputStream(taskDataPath);
+            InputStream input = DataLoader.class.getClassLoader().getResourceAsStream(taskDataPath);
 
             List<Task> tasks = parser.readValue(input, new TypeReference<List<Task>>() {});
 
@@ -89,7 +89,7 @@ public class DataLoader {
     public static List<Item> loadItemData(String itemDataPath){
         try{
 
-            InputStream input = new FileInputStream(itemDataPath);
+            InputStream input = DataLoader.class.getClassLoader().getResourceAsStream(itemDataPath);
 
             List<Item> items = parser.readValue(input, new TypeReference<List<Item>>() {});
 
@@ -108,7 +108,7 @@ public class DataLoader {
     public static List<Note> loadNoteData(String noteDataPath){
         try{
 
-            InputStream input = new FileInputStream(noteDataPath);
+            InputStream input = DataLoader.class.getClassLoader().getResourceAsStream(noteDataPath);
 
             List<Note> notes = parser.readValue(input, new TypeReference<List<Note>>() {});
 

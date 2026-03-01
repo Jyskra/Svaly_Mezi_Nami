@@ -1,0 +1,72 @@
+[
+  {
+    "id": "main_hall",
+    "name": "Main Hall",
+    "description": "You enter the main hall of the bodybuilders' congress. Legends of iron move around you, and the air is thick with the scent of sweat and magnesium. From here, you can access any of the rooms of the famous bodybuilders.",
+    "exits": [
+      "main_bodybuilder",
+      "platz",
+      "arnold",
+      "levrone",
+      "yates",
+      "cutler",
+      "zane"
+    ]
+  },
+  {
+    "id": "main_bodybuilder",
+    "name": "Main Bodybuilder's Room",
+    "description": "The head bodybuilder of the congress sits behind a massive table. His gaze measures you from head to toe[cite: 34]. This is where it is decided if you are worthy of a training plan... or if you will serve as a one-time barbell for bench presses. Dont mess with him unless you have completed all the other tasks.",
+    "exits": [
+      "main_hall"
+    ]
+  },
+  {
+    "id": "platz",
+    "name": "Hall of Infinite Squats",
+    "description": "You have entered the hall where time stands still in infinite squats. Tom Platz stands leaning against a barbell in a squat cage and, with a smile of pain in his eyes, challenges you to prove you know the basics of proper leg development.",
+    "exits": [
+      "main_hall"
+    ]
+  },
+  {
+    "id": "arnold",
+    "name": "Temple of the Iron Chest",
+    "description": "Arnold Schwarzenegger lies on a bench under a barbell. He smiles as he sets the weight down and looks at you. If you know when muscles actually grow, he may share his knowledge with you.",
+    "exits": [
+      "main_hall"
+    ]
+  },
+  {
+    "id": "levrone",
+    "name": "Arena of the Deltoid Eruption",
+    "description": "Mirrors along the walls reflect the perfect shoulders of Kevin Levrone. As soon as you enter, he turns toward you. Do you know which muscles the shoulder consists of? This is where true attention to detail is tested.",
+    "exits": [
+      "main_hall"
+    ]
+  },
+  {
+    "id": "yates",
+    "name": "Dark Hall of Massive Backs",
+    "description": "The room is darkened and feels heavy. Dorian Yates stands with his back to you—his physique appearing more like a mountain than a man. He will explain the consequences of neglecting any part of your back training.",
+    "exits": [
+      "main_hall"
+    ]
+  },
+  {
+    "id": "cutler",
+    "name": "Chamber of Tricep Dominance",
+    "description": "Jay Cutler is resting on a lounger. His triceps look as if they have their own gravity. With a weak voice, he asks you for a protein shake. Will you help him, or leave him to fade?",
+    "exits": [
+      "main_hall"
+    ]
+  },
+  {
+    "id": "zane",
+    "name": "Gallery of the Perfect Abs",
+    "description": "Frank Zane poses by a wall filled with paintings of his own physique. Every detail of his abdominal muscles is captured with artistic precision. When he spots you, he asks you to paint his form onto a canvas.",
+    "exits": [
+      "main_hall"
+    ]
+  }
+]

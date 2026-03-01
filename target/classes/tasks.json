@@ -1,0 +1,38 @@
+[
+  {
+    "taskId": "tom_platz_task",
+    "parentId": "tom_platz",
+    "description": "What exercise is the foundation for proper leg development?",
+    "correctAnswers": ["squat", "squats", "drepy", "drep"]
+  },
+  {
+    "taskId": "arnold_schwarzenegger_task",
+    "parentId": "arnold_schwarzenegger",
+    "description": "During what activity do muscles actually grow?",
+    "correctAnswers": ["rest", "odpocinek"]
+  },
+  {
+    "taskId": "kevin_levrone_task",
+    "parentId": "kevin_levrone",
+    "description": "Name one muscle that the delts are consisted of",
+    "correctAnswers": ["lateral delt", "rear delt", "anterior delt"]
+  },
+  {
+    "taskId": "dorian_yates_task",
+    "parentId": "dorian_yates",
+    "description": "Dorian will instruct you on the risks of skipping back muscles.",
+    "correctAnswers": ["understood", "got it", "chapu"]
+  },
+  {
+    "taskId": "jay_cutler_task",
+    "parentId": "jay_cutler",
+    "description": "Jay Cutler needs a protein shake.",
+    "correctAnswers": ["shaker", "mixer"]
+  },
+  {
+    "taskId": "frank_zane_task",
+    "parentId": "frank_zane",
+    "description": "Frank Zane asks you to paint his physique.",
+    "correctAnswers": ["paintbrush", "brush"]
+  }
+]

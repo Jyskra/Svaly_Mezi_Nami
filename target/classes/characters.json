@@ -1,0 +1,93 @@
+[
+  {
+    "id": "main_bodybuilder",
+    "parentId": "main_bodybuilder",
+    "name": "Main Bodybuilder",
+    "description": "A legendary athlete who has won virtually every competition he ever entered. He has dedicated his entire life to bodybuilding and will decide, based on the contents of your book, whether you are worthy of a training plan.",
+    "dialogue": {
+      "intro": "The iron never lies, Pepík. Show me your book. If it is empty, you will become my next barbell for shoulder presses.",
+      "waitingForTaskToBeDone": "Why are you standing there like a 'beta version' of a human? Go talk to the others and fill that book with knowledge!",
+      "taskDone": "Impressive. You have collected the wisdom of the legends. Here is your personalized training plan. Now, go lift!",
+      "noteDropped": "I've laid out your future on that table. Take the training plan before I change my mind and make you do 500 burpees.",
+      "thanks": "Don't thank me with words. Thank me by never missing a leg day. Now get out of here and get to work!"
+    }
+  },
+  {
+    "id": "tom_platz",
+    "parentId": "platz",
+    "name": "Tom Platz",
+    "description": "A bodybuilder famous for his incredibly developed leg muscles. He decided to replace the emotional pain of a youthful breakup with the physical pain of squats.",
+    "dialogue": {
+      "intro": "Welcome to the Hall of Infinite Squats! To earn my notes, answer me this: What exercise is the fundamental base for proper leg development?",
+      "waitingForTaskToBeDone": "The pain of a breakup is temporary, but the pump is forever. Have you found the answer to my question yet?",
+      "taskDone": "Correct! Squats are the king of all exercises. Here are my notes on building legendary legs. Embrace the pain!",
+      "noteDropped": "Don't leave the wisdom of the squat sitting there on the bench. Pick up those notes before someone else uses them for a warm-up!",
+      "thanks": "You're welcome! Just remember: when your legs scream 'no', you tell them 'YES'. That is the Platz way!"
+    }
+  },
+  {
+    "id": "arnold_schwarzenegger",
+    "parentId": "arnold",
+    "name": "Arnold Schwarzenegger",
+    "description": "An icon blessed with excellent chest and bicep genetics, which he loves to show off. Though he is involved in more than just bodybuilding, he remains one of the most significant figures at the congress.",
+    "dialogue": {
+      "intro": "I am resting between sets, but I have time for a quick test. Tell me, Pepík: When exactly do muscles actually grow?",
+      "waitingForTaskToBeDone": "Don't just stand there posing like a stickman! Think! When does the growth happen?",
+      "taskDone": "Exactly. You grow while you rest, not while you lift. Here are my notes for a massive chest and biceps. See you at the pump!",
+      "noteDropped": "I put my secrets right there next to the dumbbells. Grab them now, or you'll never reach the choppa of greatness!",
+      "thanks": "You are welcome! Keep that hunger, stay disciplined, and I'll see you at the top. I'll be back... to check your progress!"
+    }
+  },
+  {
+    "id": "kevin_levrone",
+    "parentId": "levrone",
+    "name": "Kevin Levrone",
+    "description": "A bodybuilder known for his perfect shoulders. Since his youth, he desired a wide physique that looks great even in clothes, a goal he achieved through hard training.",
+    "dialogue": {
+      "intro": "You want wide shoulders that look good in a suit? Then you must know your anatomy. Which muscles make up the entire shoulder?",
+      "waitingForTaskToBeDone": "If you don't know what you are training, you are just moving weight. Tell me the muscle groups!",
+      "taskDone": "Good job. Understanding the deltoids is the first step to greatness. Here are my notes for boulder shoulders.",
+      "noteDropped": "Your blueprint for wide shoulders is sitting right there. Pick it up before the janitor sweeps it away!",
+      "thanks": "No problem, kid. Put those notes to use and soon you'll need a wider doorframe just to get into the room."
+    }
+  },
+  {
+    "id": "dorian_yates",
+    "parentId": "yates",
+    "name": "Dorian Yates",
+    "description": "A specialist in back development whose shape resembles Doritos chips more than a human. He believes in the precise training of every muscle to ensure a complete physique.",
+    "dialogue": {
+      "intro": "Listen closely. If you skip even one muscle in your back, your physique will never be complete. A weak link breaks the chain.",
+      "waitingForTaskToBeDone": "Are you processing what I told you? A massive back requires total dedication to every fiber.",
+      "taskDone": "You seem to understand the gravity of back day. Here are my notes. Build a back that looks like a shield!",
+      "noteDropped": "The knowledge is on the desk. Grab it. In the Shadow, we don't leave things lying around for long.",
+      "thanks": "Gratitude is fine, but effort is better. Go and build that V-taper. Make every rep count."
+    }
+  },
+  {
+    "id": "jay_cutler",
+    "parentId": "cutler",
+    "name": "Jay Cutler",
+    "description": "Owner of the largest arms in the world, with triceps that look as if they have their own muscles. He hasn't eaten or drunk anything all day and is waiting for his protein shake.",
+    "dialogue": {
+      "intro": "I’m running on empty here, kid. I haven't eaten all day. Make me a protein shake and I'll share the secrets of my triceps.",
+      "waitingForTaskToBeDone": "My muscles are screaming for nutrients. Where is that shaker? Use the shaker!",
+      "taskDone": "Ah, much better. That hit the spot. Here are my notes—follow them and your triceps will have their own zip code soon.",
+      "noteDropped": "Thanks for the shake. I left the notes right there. Grab 'em before I accidentally spill my next meal on them!",
+      "thanks": "Anytime. Thanks again for the shake—you saved my gains today. Now go get some of your own."
+    }
+  },
+  {
+    "id": "frank_zane",
+    "parentId": "zane",
+    "name": "Frank Zane",
+    "description": "An aesthete with perfect abs who enjoys posing and artistic representations of his physique. In the gallery, he strives to capture the beauty of his muscles on canvas.",
+    "dialogue": {
+      "intro": "Bodybuilding is an art form. I am trying to capture this aesthetic on canvas, but I need a fresh perspective. Paint my physique for me.",
+      "waitingForTaskToBeDone": "The canvas is waiting, Pepík. Focus on the symmetry and the lines of the midsection.",
+      "taskDone": "Magnificent! You've captured the essence of the vacuum pose. Here are my secrets for building perfect abdominals.",
+      "noteDropped": "I've placed the scroll of aesthetics on the pedestal. Take it and study the art of the perfect midsection.",
+      "thanks": "The pleasure is mine. Precision and poise, Pepík. Carry those notes with the same grace you showed with the brush."
+    }
+  }
+]
