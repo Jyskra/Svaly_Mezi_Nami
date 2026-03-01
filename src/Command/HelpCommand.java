@@ -18,7 +18,7 @@ public class HelpCommand implements Command{
      * simply skips the current turn
      * @return skips the players turn at using commands
      */
-    public String execute(){
+    public String execute(String s){
         return "Here is the list of all available commands:";
     }
 }

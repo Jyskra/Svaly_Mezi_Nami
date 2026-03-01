@@ -17,7 +17,7 @@ public class ThankCommand implements Command{
      * this method enables the players to show gratitude towards their ascendants
      * @return what the characters had to say in return to the shown gratitude
      */
-    public String execute(){
+    public String execute(String s){
         if(game.getCurrentRoom().getCharacter().getClass() == MainBodybuilder.class){
             game.getCurrentRoom().getCharacter().talk(game.getPlayer());
         }

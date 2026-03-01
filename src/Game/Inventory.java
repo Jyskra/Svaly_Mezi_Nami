@@ -23,6 +23,10 @@ public class Inventory {
         return currentNotes.get(index);
     }
 
+    public boolean isFull(){
+        return currentNotes.size() == capacity;
+    }
+
     public Note removeNote(int index){
         return currentNotes.remove(index);
     }

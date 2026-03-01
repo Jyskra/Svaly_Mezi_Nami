@@ -128,11 +128,11 @@ public class Character {
             talkString = dialogue.get("waitingForTaskToBeDone");
 
         }else if(!states.get("taskGiven")){
-
-            talkString = dialogue.get("intro");
             if(task != null){
-                talkString += "\n" + task.getDescription();
+                talkString = task.getDescription() + "\n";
             }
+            talkString += dialogue.get("intro");
+
             states.put("isWaitingForAnAnswer", true);
             states.put("taskGiven", true);
 
@@ -140,6 +140,8 @@ public class Character {
 
             talkString = dialogue.get("taskDone") + "\n" + dialogue.get("noteDropped");
 
+        } else{
+            talkString = "There is nothing else to tell you, good luck.";
         }
 
         return talkString;

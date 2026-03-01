@@ -16,7 +16,7 @@ public class HintCommand implements Command{
     /**
      * @return the lore of what the game is about
      */
-    public String execute(){
+    public String execute(String s){
         return "The objective of the game is to collect all notes from all bodybuilders by helping them with their tasks, saving those notes" +
                 " in your book and then delivering that book to the main bodybuilder.";
     }

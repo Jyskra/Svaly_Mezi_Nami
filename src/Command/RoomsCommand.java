@@ -18,7 +18,7 @@ public class RoomsCommand implements Command{
     /**
      * @return a list of currently accessible rooms
      */
-    public String execute(){
+    public String execute(String s){
         return Arrays.toString(game.getCurrentRoom().getExits());
     }
 }

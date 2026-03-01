@@ -16,7 +16,7 @@ public class CharacterInteractCommand implements Command{
     /**
      * @return the text that the current character needs to tell the player
      */
-    public String execute(){
+    public String execute(String s){
         return game.getCurrentRoom().getCharacter().talk(game.getPlayer());
     }
 }

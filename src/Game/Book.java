@@ -23,8 +23,7 @@ public class Book extends Item{
 
     @Override
     public String toString() {
-        return "Book{" +
-                "notes=" + notes.toString() +
-                '}';
+        return "Book:" +
+                " notes = " + notes.toString();
     }
 }

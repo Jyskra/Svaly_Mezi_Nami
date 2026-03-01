@@ -20,7 +20,7 @@ public class EndCommand implements Command{
     /**
      * @return text telling the player that the game is actively ending
      */
-    public String execute(){
+    public String execute(String s){
         game.setPlaying(false);
         game.status = false;
         return "Ending game...";

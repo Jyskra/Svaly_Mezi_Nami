@@ -17,11 +17,11 @@ public class SaveCommand implements Command{
     /**
      * @return what was done with the current note the player tried to save
      */
-    public String execute(){
+    public String execute(String s){
         Player player = game.getPlayer();
         if(player.getInventory().getLength() > 0) {
             player.getBook().addNote(player.getInventory().removeNote(0));
-            return "Current note saved to your book";
+            return "Current note saved to your book, you book looks like this:\n" + player.getBook();
         }
         return "No note to be saved";
     }

@@ -43,10 +43,12 @@ public class UserInterface {
      * @param data data that needs to be printed to the console
      */
     public void print(String data) {
+        System.out.println(data);
+    }
+
+    public void printAnimated(String data) {
         for (int i = 0; i < data.length(); i++) {
             System.out.print(data.charAt(i));
-
-            System.out.flush();
 
             try {
                 Thread.sleep(50);
@@ -75,7 +77,7 @@ public class UserInterface {
      */
     public void execCommand(String command){
 
-        String[] commandData = command.split(" ");
+        String[] commandData = command.split(" ", 2);
 
         String initialCommand = commandData[0];
         String commandParam = "";

@@ -50,12 +50,6 @@ public class Note extends Item{
 
     @Override
     public String toString() {
-        return "Note{" +
-                "muscleGroup='" + muscleGroup + '\'' +
-                ", noteData='" + noteData + '\'' +
-                ", id='" + id + '\'' +
-                ", parentId='" + parentId + '\'' +
-                ", canBePickedUp=" + canBePickedUp +
-                '}';
+        return muscleGroup ;
     }
 }

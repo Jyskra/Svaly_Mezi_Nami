@@ -86,7 +86,7 @@ public class Game {
         DataLoader.insertCharacterTasks(charactersList, tasks);
         DataLoader.insertRoomItems(roomsList, items);
 
-        totalAmountOfNotes = notes.size();
+        totalAmountOfNotes = notes.size() - 1;
     }
 
     /**
@@ -98,10 +98,13 @@ public class Game {
 
         validCommands.add("move");
         validCommands.add("rooms");
-        validCommands.add("save");
         validCommands.add("end");
         validCommands.add("help");
         validCommands.add("hint");
+
+        if(player.getInventory().getLength() > 0){
+            validCommands.add("save");
+        }
 
         if(currentRoom.getCharacter() != null){
             validCommands.add("talk");
@@ -145,7 +148,7 @@ public class Game {
      * the main game loop, goes until the player wins or ends the game either by upsetting the main bodybuilder or ending it manually
      */
     private void gameLoop(){
-        ui.print(monologue);
+        //ui.printAnimated(monologue);
 
         while(playing){
 
@@ -158,6 +161,8 @@ public class Game {
             }else{
                 ui.print("Command isnt available.");
             }
+
+            ui.print("\n");
 
         }
         if(status){

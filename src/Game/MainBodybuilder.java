@@ -28,12 +28,12 @@ public class MainBodybuilder extends Character{
             int numberOfNotes = player.getBook().getNotes().size();
             if (numberOfNotes == Game.totalAmountOfNotes){
                 super.taskDone();
+            }else{
+
+                end.execute("");
+                return "You forgot to talk to some of the fellow bodybuilders, which is a huge disrespect in my culture, TAKE THIS!";
+
             }
-
-        }else{
-
-            end.execute("");
-            return "You forgot to talk to some of the fellow bodybuilders, which is a huge disrespect in my culture, TAKE THIS!";
 
         }
 
